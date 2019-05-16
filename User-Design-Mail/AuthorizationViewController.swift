@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AuthorizationViewController.swift
 //  User-Design-Mail
 //
 //  Created by Alexander Skrypnyk on 5/16/19.
@@ -8,13 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class AuthorizationViewController: UIViewController {
   
 
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+  }
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     self.view.endEditing(true)
   }
 
 }
-

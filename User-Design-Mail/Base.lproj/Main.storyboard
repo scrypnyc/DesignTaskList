@@ -21,13 +21,36 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background-1" translatesAutoresizingMaskIntoConstraints="NO" id="EWf-Jw-uAn">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo + Title" translatesAutoresizingMaskIntoConstraints="NO" id="1pO-dW-H8f" customClass="label">
+                                <rect key="frame" x="109" y="120" width="159" height="154"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2x8-ti-Biw">
+                                <rect key="frame" x="62" y="470" width="252" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Log In"/>
+                                <connections>
+                                    <segue destination="O0E-q6-RlP" kind="show" id="mye-M6-rSt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDR-Qa-Oqs">
+                                <rect key="frame" x="62" y="532" width="252" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Sing In"/>
+                                <connections>
+                                    <segue destination="MlC-OG-q5j" kind="show" id="Ayc-Hi-3rk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1pO-dW-H8f" secondAttribute="bottom" constant="393" id="1W4-Mc-wEv"/>
+                            <constraint firstItem="1pO-dW-H8f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="9mE-c6-sdc"/>
+                            <constraint firstItem="1pO-dW-H8f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="109" id="Jxb-iC-cMt"/>
                             <constraint firstItem="EWf-Jw-uAn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="YqW-Cr-Tuf"/>
                             <constraint firstItem="EWf-Jw-uAn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="d9J-oW-iPp"/>
                             <constraint firstItem="EWf-Jw-uAn" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="fK2-Gi-7SW"/>
                             <constraint firstItem="EWf-Jw-uAn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="igR-l8-Co9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1pO-dW-H8f" secondAttribute="trailing" constant="107" id="wsI-gM-zsJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -36,8 +59,202 @@
             </objects>
             <point key="canvasLocation" x="138.40000000000001" y="97.601199400299862"/>
         </scene>
+        <!--Authorization View Controller-->
+        <scene sceneID="nwL-1g-EPv">
+            <objects>
+                <viewController id="O0E-q6-RlP" customClass="AuthorizationViewController" customModule="User_Design_Mail" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Nn-0l-d4M">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background-1" translatesAutoresizingMaskIntoConstraints="NO" id="ii9-t1-nKz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo + Title" translatesAutoresizingMaskIntoConstraints="NO" id="Uyp-WU-Hc6" customClass="label">
+                                <rect key="frame" x="109" y="120" width="159" height="154"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" background="Rectangle1" translatesAutoresizingMaskIntoConstraints="NO" id="wpY-Wt-6FA">
+                                <rect key="frame" x="61" y="432" width="252" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                        <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zyq-Jg-5mc">
+                                <rect key="frame" x="61" y="532" width="252" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Login"/>
+                                <connections>
+                                    <segue destination="xQs-Fm-sSD" kind="show" id="F8g-1v-N1v"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" background="Rectangle1" translatesAutoresizingMaskIntoConstraints="NO" id="KKp-Xl-l5T">
+                                <rect key="frame" x="61" y="371" width="252" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                        <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon person" translatesAutoresizingMaskIntoConstraints="NO" id="bf4-Gf-mk0">
+                                <rect key="frame" x="71" y="383" width="14" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon lock" translatesAutoresizingMaskIntoConstraints="NO" id="B5d-6Y-v33">
+                                <rect key="frame" x="69" y="442" width="19" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ii9-t1-nKz" firstAttribute="bottom" secondItem="1oo-51-dvn" secondAttribute="bottom" id="1TP-tA-vhX"/>
+                            <constraint firstItem="ii9-t1-nKz" firstAttribute="trailing" secondItem="1oo-51-dvn" secondAttribute="trailing" id="LiG-UT-xau"/>
+                            <constraint firstItem="ii9-t1-nKz" firstAttribute="leading" secondItem="1oo-51-dvn" secondAttribute="leading" id="Za8-zU-Sp9"/>
+                            <constraint firstItem="ii9-t1-nKz" firstAttribute="top" secondItem="2Nn-0l-d4M" secondAttribute="top" id="Zr3-LF-5pW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1oo-51-dvn"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GDW-T2-AAU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-450.39999999999998" y="787.55622188905556"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="k0O-g4-0oc">
+            <objects>
+                <viewController id="xQs-Fm-sSD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8fm-dF-jNU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Inbox screen" translatesAutoresizingMaskIntoConstraints="NO" id="xiL-qO-aYs">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xiL-qO-aYs" firstAttribute="top" secondItem="O1L-ZW-p4W" secondAttribute="top" constant="-20" id="1BT-UU-hwz"/>
+                            <constraint firstItem="O1L-ZW-p4W" firstAttribute="bottom" secondItem="xiL-qO-aYs" secondAttribute="bottom" id="lbe-1Q-rh4"/>
+                            <constraint firstItem="xiL-qO-aYs" firstAttribute="leading" secondItem="O1L-ZW-p4W" secondAttribute="leading" id="xrl-el-UFo"/>
+                            <constraint firstItem="O1L-ZW-p4W" firstAttribute="trailing" secondItem="xiL-qO-aYs" secondAttribute="trailing" id="yjc-Cx-YEZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="O1L-ZW-p4W"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cv0-Rd-PQe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-434.39999999999998" y="1517.9910044977512"/>
+        </scene>
+        <!--Registration View Controller-->
+        <scene sceneID="Qh4-jb-tkP">
+            <objects>
+                <viewController id="MlC-OG-q5j" customClass="RegistrationViewController" customModule="User_Design_Mail" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="euT-xo-62g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background-1" translatesAutoresizingMaskIntoConstraints="NO" id="fy9-Wr-dQi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvH-1n-VDi">
+                                <rect key="frame" x="61" y="532" width="252" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Singin"/>
+                                <connections>
+                                    <segue destination="xQs-Fm-sSD" kind="show" id="LWh-4Q-Hyc"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon lock" translatesAutoresizingMaskIntoConstraints="NO" id="KuO-aK-oQZ">
+                                <rect key="frame" x="72" y="381" width="19" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" background="Rectangle1" translatesAutoresizingMaskIntoConstraints="NO" id="Sth-T3-MGt">
+                                <rect key="frame" x="61" y="371" width="252" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                        <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" background="Rectangle1" translatesAutoresizingMaskIntoConstraints="NO" id="KyJ-s0-Oq3">
+                                <rect key="frame" x="62" y="310" width="252" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                        <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon person" translatesAutoresizingMaskIntoConstraints="NO" id="eOA-ZO-0if">
+                                <rect key="frame" x="74" y="322" width="14" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo + Title" translatesAutoresizingMaskIntoConstraints="NO" id="9eM-jE-VmT" customClass="label">
+                                <rect key="frame" x="109" y="120" width="159" height="154"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="center" minimumFontSize="17" background="Rectangle1" translatesAutoresizingMaskIntoConstraints="NO" id="TEh-CY-U26">
+                                <rect key="frame" x="61" y="432" width="252" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                        <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon lock" translatesAutoresizingMaskIntoConstraints="NO" id="UJQ-oH-JkZ">
+                                <rect key="frame" x="72" y="442" width="19" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fy9-Wr-dQi" firstAttribute="leading" secondItem="Y2Z-GT-NWB" secondAttribute="leading" id="CIr-Bk-R84"/>
+                            <constraint firstItem="fy9-Wr-dQi" firstAttribute="top" secondItem="euT-xo-62g" secondAttribute="top" id="NMu-K6-yCE"/>
+                            <constraint firstItem="fy9-Wr-dQi" firstAttribute="trailing" secondItem="Y2Z-GT-NWB" secondAttribute="trailing" id="UTI-Op-MAo"/>
+                            <constraint firstItem="fy9-Wr-dQi" firstAttribute="bottom" secondItem="Y2Z-GT-NWB" secondAttribute="bottom" id="mZA-iP-qqI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Y2Z-GT-NWB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a0U-Td-w3i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="740" y="789"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Background-1" width="375" height="667"/>
+        <image name="Inbox screen" width="375" height="667"/>
+        <image name="Log In" width="252" height="38"/>
+        <image name="Login" width="252" height="38"/>
+        <image name="Logo + Title" width="155" height="157"/>
+        <image name="Rectangle1" width="252" height="38"/>
+        <image name="Sing In" width="252" height="38"/>
+        <image name="Singin" width="252" height="38"/>
+        <image name="icon lock" width="13" height="17"/>
+        <image name="icon person" width="14" height="15"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="F8g-1v-N1v"/>
+    </inferredMetricsTieBreakers>
 </document>
