@@ -18,11 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background-1" translatesAutoresizingMaskIntoConstraints="NO" id="EWf-Jw-uAn">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="EWf-Jw-uAn">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo + Title" translatesAutoresizingMaskIntoConstraints="NO" id="1pO-dW-H8f" customClass="label">
-                                <rect key="frame" x="109" y="120" width="159" height="154"/>
+                                <rect key="frame" x="109" y="100" width="159" height="154"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2x8-ti-Biw">
                                 <rect key="frame" x="62" y="470" width="252" height="38"/>
@@ -43,8 +43,8 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1pO-dW-H8f" secondAttribute="bottom" constant="393" id="1W4-Mc-wEv"/>
-                            <constraint firstItem="1pO-dW-H8f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="9mE-c6-sdc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1pO-dW-H8f" secondAttribute="bottom" constant="413" id="1W4-Mc-wEv"/>
+                            <constraint firstItem="1pO-dW-H8f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="9mE-c6-sdc"/>
                             <constraint firstItem="1pO-dW-H8f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="109" id="Jxb-iC-cMt"/>
                             <constraint firstItem="EWf-Jw-uAn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="YqW-Cr-Tuf"/>
                             <constraint firstItem="EWf-Jw-uAn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="d9J-oW-iPp"/>
@@ -67,11 +67,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background-1" translatesAutoresizingMaskIntoConstraints="NO" id="ii9-t1-nKz">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="ii9-t1-nKz">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo + Title" translatesAutoresizingMaskIntoConstraints="NO" id="Uyp-WU-Hc6" customClass="label">
-                                <rect key="frame" x="109" y="120" width="159" height="154"/>
+                                <rect key="frame" x="109" y="100" width="159" height="154"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" background="Rectangle1" translatesAutoresizingMaskIntoConstraints="NO" id="wpY-Wt-6FA">
@@ -153,7 +153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cv0-Rd-PQe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-434.39999999999998" y="1517.9910044977512"/>
+            <point key="canvasLocation" x="-450" y="1604"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="Qh4-jb-tkP">
@@ -163,7 +163,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background-1" translatesAutoresizingMaskIntoConstraints="NO" id="fy9-Wr-dQi">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="fy9-Wr-dQi">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvH-1n-VDi">
@@ -206,8 +206,8 @@
                                 <rect key="frame" x="74" y="322" width="14" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo + Title" translatesAutoresizingMaskIntoConstraints="NO" id="9eM-jE-VmT" customClass="label">
-                                <rect key="frame" x="109" y="120" width="159" height="154"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon lock" translatesAutoresizingMaskIntoConstraints="NO" id="UJQ-oH-JkZ">
+                                <rect key="frame" x="72" y="442" width="19" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="center" minimumFontSize="17" background="Rectangle1" translatesAutoresizingMaskIntoConstraints="NO" id="TEh-CY-U26">
@@ -222,8 +222,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon lock" translatesAutoresizingMaskIntoConstraints="NO" id="UJQ-oH-JkZ">
-                                <rect key="frame" x="72" y="442" width="19" height="19"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo + Title" translatesAutoresizingMaskIntoConstraints="NO" id="9eM-jE-VmT" customClass="label">
+                                <rect key="frame" x="108" y="100" width="159" height="154"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -243,11 +243,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Background-1" width="375" height="667"/>
+        <image name="Background" width="375" height="667"/>
         <image name="Inbox screen" width="375" height="667"/>
         <image name="Log In" width="252" height="38"/>
         <image name="Login" width="252" height="38"/>
-        <image name="Logo + Title" width="155" height="157"/>
+        <image name="Logo + Title" width="155" height="163"/>
         <image name="Rectangle1" width="252" height="38"/>
         <image name="Sing In" width="252" height="38"/>
         <image name="Singin" width="252" height="38"/>
