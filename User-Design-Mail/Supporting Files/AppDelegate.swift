@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     sleep(1)
+    
     return true
   }
 
@@ -43,8 +44,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func applicationDidFinishLaunching(_ application: UIApplication) {
     
     
-
-  }
+    
+    }
+  
 
 }
 
