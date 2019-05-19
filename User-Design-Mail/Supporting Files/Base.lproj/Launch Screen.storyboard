@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Main screen" translatesAutoresizingMaskIntoConstraints="NO" id="9iz-KB-KOM" userLabel="Main Screen">
+                            <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Main" translatesAutoresizingMaskIntoConstraints="NO" id="9iz-KB-KOM" userLabel="Main Screen">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="1" green="0.59950821099999996" blue="0.54642127269999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
@@ -39,6 +39,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Main screen" width="375" height="667"/>
+        <image name="Main" width="375" height="667"/>
     </resources>
 </document>
