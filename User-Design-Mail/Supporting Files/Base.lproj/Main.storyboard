@@ -13,7 +13,7 @@
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="User_Design_Mail" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MainViewController" customModule="User_Design_Mail" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +21,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="EWf-Jw-uAn">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo + Title" translatesAutoresizingMaskIntoConstraints="NO" id="1pO-dW-H8f" customClass="label">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo + Title" translatesAutoresizingMaskIntoConstraints="NO" id="1pO-dW-H8f">
                                 <rect key="frame" x="109" y="100" width="159" height="154"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2x8-ti-Biw">
@@ -76,7 +76,7 @@
                                 <rect key="frame" x="109" y="100" width="159" height="154"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" background="Rectangle1" translatesAutoresizingMaskIntoConstraints="NO" id="wpY-Wt-6FA">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="center" minimumFontSize="17" background="Rectangle1" translatesAutoresizingMaskIntoConstraints="NO" id="wpY-Wt-6FA">
                                 <rect key="frame" x="61" y="432" width="252" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -94,15 +94,14 @@
                                 <state key="normal" image="Login"/>
                                 <connections>
                                     <action selector="logInButton:" destination="O0E-q6-RlP" eventType="touchUpInside" id="dR4-PK-QCl"/>
-                                    <segue destination="gxl-0l-0ej" kind="show" identifier="LoginTaskSegue" id="IEs-Kd-1p3"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" background="Rectangle1" translatesAutoresizingMaskIntoConstraints="NO" id="KKp-Xl-l5T">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" textAlignment="center" minimumFontSize="17" background="Rectangle1" translatesAutoresizingMaskIntoConstraints="NO" id="KKp-Xl-l5T">
                                 <rect key="frame" x="61" y="371" width="252" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
                                         <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -128,8 +127,9 @@
                         <viewLayoutGuide key="safeArea" id="1oo-51-dvn"/>
                     </view>
                     <connections>
-                        <outlet property="EmailTF" destination="KKp-Xl-l5T" id="fc9-Iz-ToT"/>
+                        <outlet property="emailTF" destination="KKp-Xl-l5T" id="yf3-Es-4al"/>
                         <outlet property="passwordTF" destination="wpY-Wt-6FA" id="gE1-T3-joz"/>
+                        <segue destination="gxl-0l-0ej" kind="show" identifier="toTasksSegue" id="arL-st-uR8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GDW-T2-AAU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -153,14 +153,13 @@
                                 <state key="normal" image="Singin"/>
                                 <connections>
                                     <action selector="singInButton:" destination="MlC-OG-q5j" eventType="touchUpInside" id="dHX-kk-h9B"/>
-                                    <segue destination="O0E-q6-RlP" kind="show" id="SGO-KG-tBb"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon lock" translatesAutoresizingMaskIntoConstraints="NO" id="KuO-aK-oQZ">
                                 <rect key="frame" x="72" y="381" width="19" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" background="Rectangle1" translatesAutoresizingMaskIntoConstraints="NO" id="Sth-T3-MGt">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="center" minimumFontSize="17" background="Rectangle1" translatesAutoresizingMaskIntoConstraints="NO" id="Sth-T3-MGt">
                                 <rect key="frame" x="61" y="371" width="252" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -172,12 +171,12 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" background="Rectangle1" translatesAutoresizingMaskIntoConstraints="NO" id="KyJ-s0-Oq3">
-                                <rect key="frame" x="62" y="310" width="252" height="38"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" textAlignment="center" minimumFontSize="17" background="Rectangle1" translatesAutoresizingMaskIntoConstraints="NO" id="KyJ-s0-Oq3">
+                                <rect key="frame" x="61" y="310" width="253" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
                                         <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -192,7 +191,7 @@
                                 <rect key="frame" x="72" y="442" width="19" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="center" minimumFontSize="17" background="Rectangle1" translatesAutoresizingMaskIntoConstraints="NO" id="TEh-CY-U26">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Confirm Password" textAlignment="center" minimumFontSize="17" background="Rectangle1" translatesAutoresizingMaskIntoConstraints="NO" id="TEh-CY-U26">
                                 <rect key="frame" x="61" y="432" width="252" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -204,7 +203,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo + Title" translatesAutoresizingMaskIntoConstraints="NO" id="9eM-jE-VmT" customClass="label">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo + Title" translatesAutoresizingMaskIntoConstraints="NO" id="9eM-jE-VmT">
                                 <rect key="frame" x="108" y="100" width="159" height="154"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -219,14 +218,15 @@
                         <viewLayoutGuide key="safeArea" id="Y2Z-GT-NWB"/>
                     </view>
                     <connections>
-                        <outlet property="PasswordTF" destination="Sth-T3-MGt" id="lR2-lK-f0z"/>
                         <outlet property="confirmPasswordTF" destination="TEh-CY-U26" id="gwm-On-4QN"/>
                         <outlet property="emailTF" destination="KyJ-s0-Oq3" id="aCg-tT-I1m"/>
+                        <outlet property="passwordTF" destination="Sth-T3-MGt" id="eCm-gL-nKz"/>
+                        <segue destination="O0E-q6-RlP" kind="show" identifier="toLoginSegue" id="3uh-Sd-DvD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a0U-Td-w3i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="740" y="789"/>
+            <point key="canvasLocation" x="740" y="788.45577211394311"/>
         </scene>
         <!--Tasks-->
         <scene sceneID="h1F-wJ-vUt">
@@ -268,6 +268,12 @@
                         <viewLayoutGuide key="safeArea" id="3So-kg-n6n"/>
                     </view>
                     <navigationItem key="navigationItem" title="Tasks" id="GKS-Gi-Sqr">
+                        <barButtonItem key="leftBarButtonItem" title="Sign Out" id="5Ro-TF-7f0">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="signOutButton:" destination="Me4-yB-Hin" id="vQv-pL-yQz"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="iwa-66-23h">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -321,6 +327,6 @@
         <image name="icon person" width="14" height="15"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SGO-KG-tBb"/>
+        <segue reference="mye-M6-rSt"/>
     </inferredMetricsTieBreakers>
 </document>

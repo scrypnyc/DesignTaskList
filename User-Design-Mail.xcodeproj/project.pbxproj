@@ -26,13 +26,14 @@
 		8402AFBC2290577F0059134C /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		84053405228EDE4200B2F4B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		844F10B72291AE5700DBD5A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		8453DB87228D7C400087BD10 /* User-Design-Mail.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "User-Design-Mail.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8453DB87228D7C400087BD10 /* User-Design-Mail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "User-Design-Mail.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8453DB8A228D7C400087BD10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8453DB8C228D7C400087BD10 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8453DB8F228D7C400087BD10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8453DB96228D7C420087BD10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8472826A228DC94100F97E12 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		8472826C228DC98D00F97E12 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		84A9308A229211CA0071B90C /* User-Design-Mail.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "User-Design-Mail.entitlements"; sourceTree = "<group>"; };
 		84F1CB09228ED9EC00A632B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +114,7 @@
 		8453DB89228D7C400087BD10 /* User-Design-Mail */ = {
 			isa = PBXGroup;
 			children = (
+				84A9308A229211CA0071B90C /* User-Design-Mail.entitlements */,
 				8453DB96228D7C420087BD10 /* Info.plist */,
 				844F10B72291AE5700DBD5A3 /* GoogleService-Info.plist */,
 				8402AFC222905BAA0059134C /* Control */,
@@ -129,7 +131,6 @@
 				43178335E9D36A670291C41E /* Pods-User-Design-Mail.debug.xcconfig */,
 				838AB9B668E89C363F52CDE5 /* Pods-User-Design-Mail.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -167,6 +168,11 @@
 				TargetAttributes = {
 					8453DB86228D7C400087BD10 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -411,6 +417,7 @@
 			baseConfigurationReference = 43178335E9D36A670291C41E /* Pods-User-Design-Mail.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "User-Design-Mail/User-Design-Mail.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K85P9N4UY9;
 				INFOPLIST_FILE = "User-Design-Mail/Info.plist";
@@ -430,6 +437,7 @@
 			baseConfigurationReference = 838AB9B668E89C363F52CDE5 /* Pods-User-Design-Mail.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "User-Design-Mail/User-Design-Mail.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K85P9N4UY9;
 				INFOPLIST_FILE = "User-Design-Mail/Info.plist";
