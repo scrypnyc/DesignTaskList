@@ -15,6 +15,7 @@
 		8453DB90228D7C400087BD10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8453DB8E228D7C400087BD10 /* Main.storyboard */; };
 		8472826B228DC94100F97E12 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8472826A228DC94100F97E12 /* AuthorizationViewController.swift */; };
 		8472826D228DC98D00F97E12 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8472826C228DC98D00F97E12 /* RegistrationViewController.swift */; };
+		84A9308E22954E2D0071B90C /* SupportFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A9308D22954E2D0071B90C /* SupportFile.swift */; };
 		84F1CB0A228ED9EC00A632B6 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F1CB08228ED9EC00A632B6 /* Launch Screen.storyboard */; };
 		902A9BEA9CC047763EDB3C0E /* Pods_User_Design_Mail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C4504F3BE4D30A619571606 /* Pods_User_Design_Mail.framework */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,7 @@
 		8472826A228DC94100F97E12 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		8472826C228DC98D00F97E12 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		84A9308A229211CA0071B90C /* User-Design-Mail.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "User-Design-Mail.entitlements"; sourceTree = "<group>"; };
+		84A9308D22954E2D0071B90C /* SupportFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SupportFile.swift; path = ../../SupportFile.swift; sourceTree = "<group>"; };
 		84F1CB09228ED9EC00A632B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				8453DB8A228D7C400087BD10 /* AppDelegate.swift */,
+				84A9308D22954E2D0071B90C /* SupportFile.swift */,
 				8453DB8E228D7C400087BD10 /* Main.storyboard */,
 				84F1CB08228ED9EC00A632B6 /* Launch Screen.storyboard */,
 				84053405228EDE4200B2F4B1 /* Assets.xcassets */,
@@ -271,6 +274,7 @@
 				8402AFBD2290577F0059134C /* TasksViewController.swift in Sources */,
 				8472826D228DC98D00F97E12 /* RegistrationViewController.swift in Sources */,
 				8453DB8B228D7C400087BD10 /* AppDelegate.swift in Sources */,
+				84A9308E22954E2D0071B90C /* SupportFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

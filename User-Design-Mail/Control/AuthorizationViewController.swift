@@ -17,7 +17,7 @@ class AuthorizationViewController: UIViewController {
   
   override func viewDidLoad() {
           super.viewDidLoad()
-      }
+  }
   
   
   override func viewWillAppear(_ animated: Bool) {
@@ -25,25 +25,15 @@ class AuthorizationViewController: UIViewController {
           
           emailTF.text = ""
           passwordTF.text = ""
-      }
+  }
   
-  
-  func alertMessage(title: String, message: String, style: UIAlertController.Style) {
-    
-      let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
-      let action = UIAlertAction(title: "Enter", style: .cancel) { (action) in }
-    
-      alertController.addAction(action)
-      self.present(alertController, animated: true, completion: nil)
-      }
-  
-  
+
   @IBAction func logInButton(_ sender: UIButton) {
     
       guard let email = emailTF.text, let password = passwordTF.text, email != "", password != "" else {
       self.alertMessage(title: "Wrong!", message: "Wrong email or password, please try again", style: .alert)
       return
-      }
+  }
     
     
   Auth.auth().signIn(withEmail: email, password: password) { [weak self] (user, error) in
@@ -59,5 +49,5 @@ class AuthorizationViewController: UIViewController {
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
-      }
+  }
 }

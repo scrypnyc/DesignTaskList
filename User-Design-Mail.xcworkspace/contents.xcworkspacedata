@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:SupportFile.swift">
+   </FileRef>
+   <FileRef
       location = "group:User-Design-Mail.xcodeproj">
    </FileRef>
    <FileRef
