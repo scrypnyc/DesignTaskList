@@ -24,14 +24,17 @@ class RegistrationViewController: UIViewController {
  
   @IBAction func singInButton(_ sender: UIButton) {
     
-      guard let email = emailTF.text, let password = passwordTF.text, let confirmPassword = confirmPasswordTF.text, email != "", password == confirmPassword else {
+      guard let email = emailTF.text,
+            let password = passwordTF.text,
+            let confirmPassword = confirmPasswordTF.text, email != "", password == confirmPassword else {
       self.alertMessage(title: "Wrong!", message: "Wrong email or password, please try again", style: .alert)
       return
   }
     
-    
+    //register the user with Firebase
   Auth.auth().createUser(withEmail: email, password: password) { [weak self] (user, error) in
     
+    //check user not nil
       if user != nil {
       self?.performSegue(withIdentifier: "toLoginSegue", sender: nil)
       self?.alertMessage(title: "Wrong!", message: "Wrong email or password, please try again", style: .alert)

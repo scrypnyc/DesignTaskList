@@ -147,6 +147,9 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="fy9-Wr-dQi">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo + Title" translatesAutoresizingMaskIntoConstraints="NO" id="9eM-jE-VmT">
+                                <rect key="frame" x="108" y="91" width="159" height="163"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvH-1n-VDi">
                                 <rect key="frame" x="61" y="532" width="252" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -203,17 +206,18 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo + Title" translatesAutoresizingMaskIntoConstraints="NO" id="9eM-jE-VmT">
-                                <rect key="frame" x="108" y="100" width="159" height="154"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="9eM-jE-VmT" firstAttribute="top" secondItem="Y2Z-GT-NWB" secondAttribute="top" constant="71" id="5y5-qJ-b8m"/>
                             <constraint firstItem="fy9-Wr-dQi" firstAttribute="leading" secondItem="Y2Z-GT-NWB" secondAttribute="leading" id="CIr-Bk-R84"/>
+                            <constraint firstItem="Y2Z-GT-NWB" firstAttribute="trailing" secondItem="9eM-jE-VmT" secondAttribute="trailing" constant="108" id="HS4-lV-EXM"/>
                             <constraint firstItem="fy9-Wr-dQi" firstAttribute="top" secondItem="euT-xo-62g" secondAttribute="top" id="NMu-K6-yCE"/>
                             <constraint firstItem="fy9-Wr-dQi" firstAttribute="trailing" secondItem="Y2Z-GT-NWB" secondAttribute="trailing" id="UTI-Op-MAo"/>
+                            <constraint firstItem="9eM-jE-VmT" firstAttribute="leading" secondItem="Y2Z-GT-NWB" secondAttribute="leading" constant="108" id="YzD-NG-PEz"/>
+                            <constraint firstItem="9eM-jE-VmT" firstAttribute="centerX" secondItem="Y2Z-GT-NWB" secondAttribute="centerX" id="eju-Xc-V5d"/>
                             <constraint firstItem="fy9-Wr-dQi" firstAttribute="bottom" secondItem="Y2Z-GT-NWB" secondAttribute="bottom" id="mZA-iP-qqI"/>
+                            <constraint firstItem="Y2Z-GT-NWB" firstAttribute="bottom" secondItem="9eM-jE-VmT" secondAttribute="bottom" constant="413" id="vF1-Nh-vPl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Y2Z-GT-NWB"/>
                     </view>
@@ -327,6 +331,6 @@
         <image name="icon person" width="14" height="15"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mye-M6-rSt"/>
+        <segue reference="3uh-Sd-DvD"/>
     </inferredMetricsTieBreakers>
 </document>
