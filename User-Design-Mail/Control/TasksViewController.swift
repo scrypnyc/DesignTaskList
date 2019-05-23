@@ -17,13 +17,13 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-      let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-      let bgColorView = UIView()
-      bgColorView.backgroundColor = .init(red: 0.14, green: 0.26, blue: 0.33, alpha: 1.0)
-      cell.selectedBackgroundView = bgColorView
+    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+    let bgColorView = UIView()
+    bgColorView.backgroundColor = .init(red: 0.14, green: 0.26, blue: 0.33, alpha: 1.0)
+    cell.selectedBackgroundView = bgColorView
     
-      cell.textLabel?.text = "Cell number \(indexPath.row)"
-      cell.textLabel?.textColor = .white
+    cell.textLabel?.text = "Cell number \(indexPath.row)"
+    cell.textLabel?.textColor = .white
     
     return cell
   }
