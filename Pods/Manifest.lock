@@ -1,4 +1,5 @@
 PODS:
+  - AnimatedGradientView (1.1.1)
   - Firebase/Auth (5.20.2):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.4.2)
@@ -69,12 +70,14 @@ PODS:
   - nanopb/encode (0.3.901)
 
 DEPENDENCIES:
+  - AnimatedGradientView
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AnimatedGradientView
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -89,6 +92,7 @@ SPEC REPOS:
     - nanopb
 
 SPEC CHECKSUMS:
+  AnimatedGradientView: e3d928407034be3e97ae62564a4071da4b10b0f2
   Firebase: 0c8cf33f266410c61ab3e2265cfa412200351d9c
   FirebaseAnalytics: ece1aa57a4f43c64d53a648b5a5e05151aae947b
   FirebaseAuth: dd7bbf03a5aee0eafb3a1aee4d2812bd74bac890
@@ -102,6 +106,6 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
 
-PODFILE CHECKSUM: 267858f560624487ab6db444dd4805325ec0de91
+PODFILE CHECKSUM: 91ddd1986807deb8fcc16f87ec79dcbb6d1b3a74
 
 COCOAPODS: 1.6.1

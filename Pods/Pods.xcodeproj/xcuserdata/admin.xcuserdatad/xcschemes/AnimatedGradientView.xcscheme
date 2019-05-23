@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F587E06A098078461AAC9B5F4146A60D"
-               BuildableName = "GoogleAppMeasurement"
-               BlueprintName = "GoogleAppMeasurement"
+               BlueprintIdentifier = "982E385ADA3A798389E02E6B6F0CF037"
+               BuildableName = "AnimatedGradientView.framework"
+               BlueprintName = "AnimatedGradientView"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
