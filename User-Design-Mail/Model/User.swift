@@ -7,3 +7,15 @@
 //
 
 import Foundation
+import Firebase
+
+struct User {
+    
+    let uID: String
+    let email: String
+    
+    init(user: User) {
+        self.uID = user.uID
+        self.email = user.email
+    }
+}

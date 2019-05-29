@@ -65,8 +65,8 @@
 		8402AFBE22905B7A0059134C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E5AD0563229EE814004160B1 /* Task.swift */,
 				E5AD0565229EE826004160B1 /* User.swift */,
+				E5AD0563229EE814004160B1 /* Task.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -74,6 +74,8 @@
 		8402AFC022905B940059134C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8453DB8E228D7C400087BD10 /* Main.storyboard */,
+				84F1CB08228ED9EC00A632B6 /* Launch Screen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -94,8 +96,6 @@
 			children = (
 				84A930AF2296F2F00071B90C /* Extension */,
 				8453DB8A228D7C400087BD10 /* AppDelegate.swift */,
-				8453DB8E228D7C400087BD10 /* Main.storyboard */,
-				84F1CB08228ED9EC00A632B6 /* Launch Screen.storyboard */,
 				84053405228EDE4200B2F4B1 /* Assets.xcassets */,
 			);
 			path = "Supporting Files";

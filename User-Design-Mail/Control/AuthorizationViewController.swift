@@ -26,26 +26,30 @@ class AuthorizationViewController: UIViewController {
   }
   
   
-  @objc func kbDidShow(notification: Notification) {
-   guard let userInfo = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] else { return }
+   @objc func kbDidShow(notification: Notification) {
+    guard let userInfo = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] else { return }
     let kbFrameSize = (userInfo as! NSValue).cgRectValue
     
     (self.view as! UIScrollView).contentSize = CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height + kbFrameSize.height)
     
   }
   
-  @objc func kbDidHide() {
+   @objc func kbDidHide() {
      (self.view as! UIScrollView).contentSize = CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height)
     
   }
   
   
-  override func viewWillAppear(_ animated: Bool) {
-   super.viewWillAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
           
       emailTF.text = ""
       passwordTF.text = ""
   }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
   
 
   @IBAction func logInButton(_ sender: UIButton) {
@@ -65,7 +69,5 @@ class AuthorizationViewController: UIViewController {
   
 
   }
-  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    self.view.endEditing(true)
-  }
+ 
 }
