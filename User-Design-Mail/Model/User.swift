@@ -9,11 +9,13 @@
 import Foundation
 import Firebase
 
+// users model
 struct UserData {
     
     let uid: String
     let email: String
     
+    // for local use
     init(user: User) {
         self.uid = user.uid
         self.email = user.email!

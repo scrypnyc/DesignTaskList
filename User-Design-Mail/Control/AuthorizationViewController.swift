@@ -23,19 +23,20 @@ class AuthorizationViewController: UIViewController {
     
     ref = Database.database().reference(withPath: "users")
 
+    // set keyboard
     NotificationCenter.default.addObserver(self, selector: #selector(kbDidShow), name: UIResponder.keyboardWillShowNotification, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(kbDidHide), name: UIResponder.keyboardWillHideNotification, object: nil)
   }
   
-  
+    // set keyboard
    @objc func kbDidShow(notification: Notification) {
     guard let userInfo = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] else { return }
     let kbFrameSize = (userInfo as! NSValue).cgRectValue
     
+    // added scrollView
     (self.view as! UIScrollView).contentSize = CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height + kbFrameSize.height)
     
   }
-  
    @objc func kbDidHide() {
      (self.view as! UIScrollView).contentSize = CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height)
     
@@ -58,7 +59,7 @@ class AuthorizationViewController: UIViewController {
     
     if let email = emailTF.text, let password = passwordTF.text {
     if isSingedIn {
-      // auth user
+      // auth the user with Firebase
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] (user, error) in
     
       if user != nil {

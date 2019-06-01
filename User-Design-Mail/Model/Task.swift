@@ -16,12 +16,14 @@ struct Task {
     let ref: DatabaseReference?
     var completed: Bool = false
     
+    // extract object from database
     init(title: String, userID: String) {
         self.title = title
         self.userID = userID
         self.ref = nil
     }
     
+    // get current data
     init(snapshot: DataSnapshot) {
         let snapshotValue = snapshot.value as! [String: AnyObject]
         title = snapshotValue["title"] as! String

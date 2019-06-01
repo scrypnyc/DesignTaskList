@@ -11,6 +11,7 @@ import Firebase
 
 class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    // create user
     var user: UserData!
     var ref: DatabaseReference!
     var tasks = Array<Task>()
@@ -54,10 +55,12 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         guard let textField = alertController.textFields?.first, textField.text != "" else { return }
         let task = Task(title: textField.text!, userID: (self?.user.uid)!)
         let taskRef = self?.ref.child(task.title)
+        // add dictionary
         taskRef?.setValue(task.convertToDictionary())
     }
     
     
+    // AlertController - AlertAction
     let candel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
     alertController.addAction(save)
     alertController.addAction(candel)
@@ -69,6 +72,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
   @IBAction func signOutButton(_ sender: UIBarButtonItem) {
     
     do {
+        // SignOut to auth VC
         try Auth.auth().signOut()
     } catch {
       print(error.localizedDescription)

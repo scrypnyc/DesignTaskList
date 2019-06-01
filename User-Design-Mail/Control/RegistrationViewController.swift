@@ -29,7 +29,7 @@ class RegistrationViewController: UIViewController {
     guard let userInfo = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] else { return }
     let kbFrameSize = (userInfo as! NSValue).cgRectValue
     
-    //add scrollView
+    //added scrollView
     (self.view as! UIScrollView).contentSize = CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height + kbFrameSize.height)
   }
     
