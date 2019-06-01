@@ -19,7 +19,7 @@ class MainViewController: UIViewController {
   @IBAction func logInButton(_ sender: UIButton) {
     
   }
-  
+    
   @IBAction func singInButton(_ sender: UIButton) {
     
   }  

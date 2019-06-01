@@ -11,34 +11,30 @@ import Firebase
 
 class RegistrationViewController: UIViewController {
   
-
   @IBOutlet weak var emailTF: UITextField!
   @IBOutlet weak var passwordTF: UITextField!
   @IBOutlet weak var confirmPasswordTF: UITextField!
   
-  
-  
+    
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    
-    NotificationCenter.default.addObserver(self, selector: #selector(kbDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
-    
-    NotificationCenter.default.addObserver(self, selector: #selector(kbDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
+    // set keyboard
+    NotificationCenter.default.addObserver(self, selector: #selector(kbDidShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(kbDidHide), name: UIResponder.keyboardWillHideNotification, object: nil)
   }
   
-  
+  // set keyboard
   @objc func kbDidShow(notification: Notification) {
     guard let userInfo = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] else { return }
     let kbFrameSize = (userInfo as! NSValue).cgRectValue
     
+    //add scrollView
     (self.view as! UIScrollView).contentSize = CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height + kbFrameSize.height)
-    
   }
-  
+    
   @objc func kbDidHide() {
     (self.view as! UIScrollView).contentSize = CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height)
-    
   }
 
  

@@ -11,7 +11,7 @@ import Firebase
 
 class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var user: UserD!
+    var user: UserData!
     var ref: DatabaseReference!
     var tasks = Array<Task>()
     
@@ -21,8 +21,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         
         guard let currentUser = Auth.auth().currentUser else { return }
-        user = UserD(user: currentUser)
-        
+        user = UserData(user: currentUser)
         ref = Database.database().reference(withPath: "users").child(String(user.uid)).child("tasks")
     }
   
@@ -54,7 +53,10 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         guard let textField = alertController.textFields?.first, textField.text != "" else { return }
         let task = Task(title: textField.text!, userID: (self?.user.uid)!)
+        let taskRef = self?.ref.child(task.title)
+        taskRef?.setValue(task.convertToDictionary())
     }
+    
     
     let candel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
     alertController.addAction(save)

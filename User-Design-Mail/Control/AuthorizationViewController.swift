@@ -11,7 +11,8 @@ import Firebase
 
 class AuthorizationViewController: UIViewController {
   
-  
+    var ref: DatabaseReference!
+
   @IBOutlet weak var emailTF: UITextField!
   @IBOutlet weak var passwordTF: UITextField!
   
@@ -20,9 +21,10 @@ class AuthorizationViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    NotificationCenter.default.addObserver(self, selector: #selector(kbDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
+    ref = Database.database().reference(withPath: "users")
 
-    NotificationCenter.default.addObserver(self, selector: #selector(kbDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(kbDidShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(kbDidHide), name: UIResponder.keyboardWillHideNotification, object: nil)
   }
   
   
@@ -56,13 +58,18 @@ class AuthorizationViewController: UIViewController {
     
     if let email = emailTF.text, let password = passwordTF.text {
     if isSingedIn {
-      Auth.auth().signIn(withEmail: email, password: password) { [weak self] (user, error) in
+      // auth user
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] (user, error) in
     
       if user != nil {
+        //segue
         self?.performSegue(withIdentifier: "toTasksSegue", sender: nil)
       } else {
         self?.alertMessage(title: "Caution!", message: "Wrong email or password, please try again", style: .alert)
       }
+        // email user in log database
+        let userRef = self?.ref.child((user?.user.uid)!)
+        userRef?.setValue(["email": user?.user.email])
     }
   }
 }
