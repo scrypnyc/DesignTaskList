@@ -37,7 +37,6 @@ class AuthorizationViewController: UIViewController {
   }
    @objc func kbDidHide() {
      (self.view as! UIScrollView).contentSize = CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height)
-    
   }
   
   
@@ -51,19 +50,19 @@ class AuthorizationViewController: UIViewController {
   @IBAction func logInButton(_ sender: UIButton) {
     
     guard let email = emailTF.text, let password = passwordTF.text, email != "", password != ""  else {
-        self.alertMessage(title: "Caution!", message: "Wrong email or password, please try again", style: .alert)
-        return
+    self.alertMessage(title: "Caution!", message: "Wrong email or password, please try again", style: .alert)
+    return
     }
-      // auth the user with Firebase
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] (user, error) in
     
-      if user != nil {
-        //segue
-        self?.performSegue(withIdentifier: "toTasksSegue", sender: nil)
-      } else {
-        self?.alertMessage(title: "Caution!", message: "Wrong email or password, please try again", style: .alert)
-        return
-      }
+    // auth the user with Firebase
+    Auth.auth().signIn(withEmail: email, password: password) { [weak self] (user, error) in
+        if user != nil {
+            self?.performSegue(withIdentifier: "toTasksSegue", sender: nil)
+        } else {
+            self?.alertMessage(title: "Caution!", message: "Wrong email or password, please try again", style: .alert)
+    return
+    }
+            
         // email user in log database
         let userRef = self?.ref.child((user?.user.uid)!)
         userRef?.setValue(["email": user?.user.email])
