@@ -15,19 +15,17 @@ class AuthorizationViewController: UIViewController {
 
   @IBOutlet weak var emailTF: UITextField!
   @IBOutlet weak var passwordTF: UITextField!
-  
-  var isSingedIn = true
-  
+    
   override func viewDidLoad() {
     super.viewDidLoad()
     
     ref = Database.database().reference(withPath: "users")
 
     // set keyboard
-    NotificationCenter.default.addObserver(self, selector: #selector(kbDidShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(kbDidHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(kbDidShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(kbDidHide), name: UIResponder.keyboardWillHideNotification, object: nil)
   }
-  
+
     // set keyboard
    @objc func kbDidShow(notification: Notification) {
     guard let userInfo = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] else { return }
@@ -43,22 +41,19 @@ class AuthorizationViewController: UIViewController {
   }
   
   
-    override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-          
-      emailTF.text = ""
-      passwordTF.text = ""
-  }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-  
+//    override func viewWillAppear(_ animated: Bool) {
+//    super.viewWillAppear(animated)
+//          
+//      emailTF.text = ""
+//      passwordTF.text = ""
+//  }
 
   @IBAction func logInButton(_ sender: UIButton) {
     
-    if let email = emailTF.text, let password = passwordTF.text {
-    if isSingedIn {
+    guard let email = emailTF.text, let password = passwordTF.text, email != "", password != ""  else {
+        self.alertMessage(title: "Caution!", message: "Wrong email or password, please try again", style: .alert)
+        return
+    }
       // auth the user with Firebase
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] (user, error) in
     
@@ -67,6 +62,7 @@ class AuthorizationViewController: UIViewController {
         self?.performSegue(withIdentifier: "toTasksSegue", sender: nil)
       } else {
         self?.alertMessage(title: "Caution!", message: "Wrong email or password, please try again", style: .alert)
+        return
       }
         // email user in log database
         let userRef = self?.ref.child((user?.user.uid)!)
@@ -74,8 +70,5 @@ class AuthorizationViewController: UIViewController {
     }
   }
 }
-  
-
-  }
  
-}
+

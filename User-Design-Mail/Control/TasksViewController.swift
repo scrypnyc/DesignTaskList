@@ -11,7 +11,6 @@ import Firebase
 
 class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    // create user
     var user: UserData!
     var ref: DatabaseReference!
     var tasks = Array<Task>()
@@ -25,6 +24,21 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         user = UserData(user: currentUser)
         ref = Database.database().reference(withPath: "users").child(String(user.uid)).child("tasks")
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // to fetch data
+        ref.observe(.value, with: { [weak self] snapshot in
+            var tasks = Array<Task>()
+            for item in snapshot.children {
+                let task = Task(snapshot: item as! DataSnapshot)
+                tasks.append(task)
+            }
+            self?.tasks = tasks
+            self?.tableView.reloadData()
+        })
+    }
   
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -33,16 +47,17 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     let bgColorView = UIView()
     bgColorView.backgroundColor = .init(red: 0.14, green: 0.26, blue: 0.33, alpha: 1.0)
     cell.selectedBackgroundView = bgColorView
-    
-    cell.textLabel?.text = "Cell number \(indexPath.row)"
     cell.textLabel?.textColor = .white
+    
+    let taskTitle = tasks[indexPath.row].title
+    cell.textLabel?.text = taskTitle
     
     return cell
   }
   
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 10
+    return tasks.count
   }  
   
   
@@ -53,14 +68,14 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     let save = UIAlertAction(title: "Save", style: .default) { [weak self] _ in
         
         guard let textField = alertController.textFields?.first, textField.text != "" else { return }
-        let task = Task(title: textField.text!, userID: (self?.user.uid)!)
+        let task = Task(title: textField.text!, userid: (self?.user.uid)!)
         let taskRef = self?.ref.child(task.title)
         // add dictionary
         taskRef?.setValue(task.convertToDictionary())
     }
     
     
-    // AlertController - AlertAction
+    // AlertAction
     let candel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
     alertController.addAction(save)
     alertController.addAction(candel)

@@ -12,14 +12,14 @@ import Firebase
 struct Task {
     
     let title: String
-    let userID: String
+    let userid: String
     let ref: DatabaseReference?
     var completed: Bool = false
     
     // extract object from database
-    init(title: String, userID: String) {
+    init(title: String, userid: String) {
         self.title = title
-        self.userID = userID
+        self.userid = userid
         self.ref = nil
     }
     
@@ -27,12 +27,12 @@ struct Task {
     init(snapshot: DataSnapshot) {
         let snapshotValue = snapshot.value as! [String: AnyObject]
         title = snapshotValue["title"] as! String
-        userID = snapshotValue["userID"] as! String
+        userid = snapshotValue["userid"] as! String
         completed = snapshotValue["completed"] as! Bool
         ref = snapshot.ref
     }
     
     func convertToDictionary() -> Any {
-        return ["title": title, "userID": userID, "completed": completed]
+        return ["title": title, "userid": userid, "completed": completed]
     }
 }

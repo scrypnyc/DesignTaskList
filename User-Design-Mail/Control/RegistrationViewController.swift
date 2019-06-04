@@ -40,9 +40,7 @@ class RegistrationViewController: UIViewController {
  
   @IBAction func singInButton(_ sender: UIButton) {
     
-    guard let email = emailTF.text,
-      let password = passwordTF.text,
-      let confirmPassword = confirmPasswordTF.text, email != "", password == confirmPassword else {
+    guard let email = emailTF.text, let password = passwordTF.text, let confirmPassword = confirmPasswordTF.text, email != "", password == confirmPassword else {
         self.alertMessage(title: "Caution!", message: "Wrong email or password, please try again", style: .alert)
         return
   }
@@ -57,8 +55,7 @@ class RegistrationViewController: UIViewController {
     }
   }
 }
-  
-  
+
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     self.view.endEditing(true)
   }

@@ -13,15 +13,24 @@ class MainViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    stayLoggedInApp()
   }
   
  
   @IBAction func logInButton(_ sender: UIButton) {
-    
   }
     
   @IBAction func singInButton(_ sender: UIButton) {
-    
-  }  
+  }
+
+    func stayLoggedInApp () {
+        Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
+            if user != nil {
+                self?.performSegue(withIdentifier: "mainToTasksSegue", sender: nil)
+                
+            }
+        }
+    }
 }
 

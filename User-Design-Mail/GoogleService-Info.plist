@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>skrypnyk.User-Design-Mail</string>
+	<string>skrypnyk.User-Design-TaskList</string>
 	<key>PROJECT_ID</key>
 	<string>userdesign-tasklist</string>
 	<key>STORAGE_BUCKET</key>
@@ -21,9 +21,9 @@
 	<key>IS_ADS_ENABLED</key>
 	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<true/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false/>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
 	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
